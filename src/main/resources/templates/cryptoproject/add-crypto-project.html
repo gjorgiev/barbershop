@@ -3,14 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Add Crypto Project</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+    <div class="ui container">
     <h1>Add new crypto project</h1>
-    <form action="#" th:action="@{/add-crypto-project}" th:object="${cryptoProject}" method="post">
-        <p>Name: <input type="text" th:field="*{name}"></p>
-        <p>Description: <textarea th:field="*{description}"></textarea></p>
-        <p>Symbol: <input type="text" th:field="*{symbol}"></p>
-        <p><input type="submit" value="Save" /> <input type="reset" value="Reset" /> </p>
+    <form class="ui form" action="#" th:action="@{/add-crypto-project}" th:object="${cryptoProject}" method="post">
+        <div class="field">
+            <label>Name</label>
+            <input type="text" th:field="*{name}"/>
+        </div>
+        <div class="field">
+            <label>Description</label>
+            <textarea th:field="*{description}"></textarea>
+        </div>
+        <div class="field">
+            <label>Symbol</label>
+            <input type="text" th:field="*{symbol}">
+        </div>
+        <button class="ui button" type="submit" >Save</button>
     </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>

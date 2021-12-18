@@ -19,8 +19,6 @@ public class CryptoProjectService {
         return cryptoProjectRepository.save(cryptoProject);
     }
 
-
-
     public Collection<CryptoProject> list() {
         return cryptoProjectRepository.findAll();
     }
