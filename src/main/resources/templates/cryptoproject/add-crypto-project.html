@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Crypto Project</title>
+</head>
+<body>
+    <h1>Add new crypto project</h1>
+    <form action="#" th:action="@{/add-crypto-project}" th:object="${cryptoProject}" method="post">
+        <p>Name: <input type="text" th:field="*{name}"></p>
+        <p>Description: <textarea th:field="*{description}"></textarea></p>
+        <p>Symbol: <input type="text" th:field="*{symbol}"></p>
+        <p><input type="submit" value="Save" /> <input type="reset" value="Reset" /> </p>
+    </form>
+</body>
+</html>
