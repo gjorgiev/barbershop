@@ -26,9 +26,9 @@ public class CryptoProjectController {
         return "/cryptoproject/view-crypto-project";
     }
 
-    @GetMapping("list-crypto-project")
-    public String listCryptoProject(Model model) {
+    @GetMapping("/")
+    public String index(Model model) {
         model.addAttribute("cryptoProjectList", cryptoProjectService.list());
-        return "/cryptoproject/list-crypto-project";
+        return "index";
     }
 }

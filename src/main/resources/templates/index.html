@@ -1,10 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:fragment="head">
     <meta charset="UTF-8">
     <title>Barber Shop</title>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+          integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <h1>Welcome do Barber Shop</h1>
+    <div class="ui container">
+        <div class="ui divided items" th:each="cryptoProject : ${cryptoProjectList}">
+            <div class="item">
+                <div class="image">
+                    <img src="/images/image.png">
+                </div>
+                <div class="content">
+                    <a class="header" th:text="${cryptoProject.name}"></a>
+                    <div class="meta">
+                        <span th:text="${cryptoProject.symbol}"> </span>
+                    </div>
+                    <div class="description">
+                        <span th:text="${cryptoProject.description}"> </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer th:fragment="footer">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"
+                integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw=="
+                crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </footer>
 </body>
 </html>
