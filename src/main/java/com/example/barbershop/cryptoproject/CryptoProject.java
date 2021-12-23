@@ -2,10 +2,7 @@ package com.example.barbershop.cryptoproject;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @Getter
@@ -18,6 +15,7 @@ public class CryptoProject {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
+    @Column(columnDefinition = "text")
     private String description;
     private Long marketCap;
     private Long circulatingSupply;
