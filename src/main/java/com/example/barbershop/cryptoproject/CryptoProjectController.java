@@ -16,14 +16,14 @@ public class CryptoProjectController {
     @GetMapping("/add-crypto-project")
     public String addCryptoProjectForm(Model model){
         model.addAttribute("cryptoProject", new CryptoProject());
-        return "/cryptoproject/add-crypto-project";
+        return "cryptoproject/add-crypto-project";
     }
 
     @PostMapping("/add-crypto-project")
     public String addCryptoProjectSubmit(@ModelAttribute CryptoProject cryptoProject, Model model) {
         cryptoProjectService.create(cryptoProject);
         model.addAttribute("cryptoProject", cryptoProject);
-        return "/cryptoproject/view-crypto-project";
+        return "cryptoproject/view-crypto-project";
     }
 
     @GetMapping("/")
