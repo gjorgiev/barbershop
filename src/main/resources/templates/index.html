@@ -6,10 +6,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Handpicked small cap projects from the alt-coin forest">
+    <meta name="author" content="The Barber">
 
-    <title>Barber Shop - Dashboard</title>
+    <title>Small Barber Shop - Handpicked small cap projects from the alt-coin forest</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -175,11 +175,11 @@
                 <!-- Projects Cards -->
                 <div class="container-fluid">
                     <div class="row row-cols-1 row-cols-md-3 g-4">
-                        <div class="col" th:each="cryptoProject : ${cryptoProjectList}">
+                        <div class="col" th:each="project : ${projects}">
                             <div class="card h-100">
                                 <div class="card-body">
-                                    <h5 class="card-title" th:text="${cryptoProject.name}"></h5>
-                                    <p class="card-text" th:text="${cryptoProject.description}"></p>
+                                    <h5 class="card-title" th:text="${project.name}"></h5>
+                                    <p class="card-text text-truncate" th:text="${project.description}"></p>
                                 </div>
                             </div>
                         </div>
