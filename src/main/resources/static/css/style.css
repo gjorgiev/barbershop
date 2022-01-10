@@ -4493,7 +4493,6 @@ input[type="button"].btn-block {
   background-clip: border-box;
   border: 1px solid #e3e6f0;
   border-radius: 0.35rem;
-  margin-bottom: 0.5rem;
 }
 
 .card > hr {
@@ -11279,4 +11278,12 @@ footer.sticky-footer .copyright {
 
 body.sidebar-toggled footer.sticky-footer {
   width: 100%;
+}
+
+.text-holder {
+    margin-left: 10px;
+}
+
+.coin-col {
+    margin-bottom: 10px;
 }

@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.Collection;
-import java.util.Date;
 
 @Service
 @RequiredArgsConstructor
@@ -48,6 +47,7 @@ public class ProjectService {
                 project.setAth(coinFullData.getMarketData().getAth().get("usd"));
                 project.setAtl(coinFullData.getMarketData().getAtl().get("usd"));
                 project.setAtlChangePercentage(coinFullData.getMarketData().getAtlChangePercentage().get("usd"));
+                project.setImage(coinFullData.getImage().getSmall());
             }
         } else {
             throw new CoinGeckoException("Ping: CoinGecko server is not responding");

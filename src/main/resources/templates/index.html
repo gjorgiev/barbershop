@@ -18,7 +18,7 @@
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="css/style.min.css" rel="stylesheet">
 
 </head>
 
@@ -175,11 +175,32 @@
                 <!-- Projects Cards -->
                 <div class="container-fluid">
                     <div class="row row-cols-1 row-cols-md-3 g-4">
-                        <div class="col" th:each="project : ${projects}">
-                            <div class="card h-100">
+                        <div class="col coin-col" th:each="project : ${projects}">
+                            <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title" th:text="${project.name}"></h5>
-                                    <p class="card-text text-truncate" th:text="${project.description}"></p>
+                                    <div class="card-info-head d-flex align-items-center justify-content-between">
+                                        <div class="coin-card d-flex align-items-center">
+                                            <img th:src="@{${project.image}}" alt="Project Logo"/>
+                                            <div class="text-holder">
+                                                <h5 th:text="${project.name}"></h5>
+                                                <p th:text="${project.symbol}"></p>
+                                            </div>
+                                        </div>
+                                        <div class="price-card">
+                                            <h5 id="current_price" class="price" th:text="${project.getCurrentPriceDecimal}"></h5>
+                                            <p class="change" th:text="${project.priceChangePercentage24h}"></p>
+                                        </div>
+                                    </div>
+                                    <div class="card-metric d-flex align-items-center justify-content-between">
+                                        <div class="text-item">
+                                            <label for="market_cap_p">Market Cap</label>
+                                            <p id="market_cap_p" class="card-text" th:text="${project.getMarketCapDecimal()}"></p>
+                                        </div>
+                                        <div class="text-item">
+                                            <label for="volume">Volume</label>
+                                            <p id="volume" class="card-text" th:text="${project.getTotalVolumeDecimal}"></p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -237,7 +258,7 @@
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+    <script src="js/script.min.js"></script>
 
     <!-- Page level plugins -->
     <script src="vendor/chart.js/Chart.min.js"></script>
